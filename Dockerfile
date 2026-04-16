@@ -8,4 +8,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 COPY --from=build target/*.jar application.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "application.jar"]
+ENTRYPOINT ["java", "-Xmx256m", "-Dspring.profiles.active=prod", "-jar", "application.jar"]
