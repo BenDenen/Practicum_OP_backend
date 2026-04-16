@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://postgres.railway.internal:5432/railway?currentSchema=spendanalytic
+    username: postgres
+    password: JMArwowfFPLgfTTOXoeKpGxJBmcHmFtz
+    driver-class-name: org.postgresql.Driver
   sql:
     init:
       mode: always
@@ -14,6 +19,6 @@ server:
 
 security:
   jwt:
-    secret: ${JWT_SECRET}
+    secret: ${JWT_SECRET:mySuperSecretKeyForJWT2024LongEnoughForHS256Algorithm}
     access: ${JWT_ACCESS:900000}
     refresh: ${JWT_REFRESH:86400000}
