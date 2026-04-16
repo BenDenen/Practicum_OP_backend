@@ -47,6 +47,7 @@ class AuthConfig(
             }
             .authorizeHttpRequests {
                 it.requestMatchers("/auth/**").permitAll()
+                    .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                     .anyRequest().authenticated()
             }
             .anonymous { it.disable() }
