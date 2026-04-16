@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}?currentSchema=spendanalytic
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
   sql:
     init:
       mode: always
